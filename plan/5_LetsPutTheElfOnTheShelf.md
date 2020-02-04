@@ -50,3 +50,20 @@ Parfois les fonctionalités peuvent être abandonnées et nul besoin dans ce cas
 ```sh
 git stash drop <index_du_stash>
 ```
+
+## De l'utilité des elfes
+Parfois, vous devrez récupérer des travaux du dépôt distant, mais ce n'est pas possible avec un "dirty index" (c'est-à-dire des chose non commitées), Git vous le dira avec un message ressemblant à celui-ci :
+```sh
+Updating 2328ff0..5f5b77c
+error: Your local changes to the following files would be overwritten by merge:
+	dirty_dancer.txt
+Please commit your changes or stash them before you merge.
+Aborting
+```
+Dans ce cas vous pouvez faire cet enchainement de commandes :
+```sh
+git stash save
+git pull
+git stash pop
+```
+Vous aurez probablement un conflit (nous y reviendrons), mais au moins vous n'aurez pas perdu vos travaux.

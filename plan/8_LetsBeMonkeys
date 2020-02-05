@@ -1,0 +1,10 @@
+# LetsBeMonkeys
+
+## La pousse
+Vous pouvez initialiser une branche localement, en utilisant la commande :
+```sh
+git checkout -b <branche>
+```
+Cette commande crée la branche et en fait la branche courante.
+
+## La pousse connectée (nettement mieux)
